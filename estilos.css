@@ -1,0 +1,57 @@
+:root{--rojo-banco:#e4002b;--azul:#0b5cad;--negro:#151515;--gris:#f3f3f4;--papel:#fff;--linea:#dcdcdf;--tinta:#25272b;--rojo:#c0152f;--ok:#1b7a43}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 1rem/1.5 "Source Sans 3",system-ui,sans-serif;color:var(--tinta);background:var(--gris)}
+h1,h2,h3,.marca{font-family:"Source Sans 3",system-ui,sans-serif;font-weight:600;line-height:1.2}
+h1{font-size:clamp(2rem,5vw,3.2rem);max-width:20ch;margin:0 0 1rem}
+h2{font-size:1.5rem;font-weight:500;margin:0 0 1rem}
+h3{margin:0 0 .3rem;font-size:1.05rem}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem clamp(1rem,3vw,2rem);background:var(--rojo-banco);color:#fff;position:sticky;top:0;z-index:5}
+.barra nav{display:flex;align-items:center;gap:1.2rem}
+.barra a{color:#fff;text-decoration:none}
+.barra .boton{background:#fff;color:var(--rojo-banco)}
+.marca{font-size:1.6rem;font-weight:700;letter-spacing:.5px}
+.boton{display:inline-block;background:var(--azul);color:#fff;border:0;border-radius:3px;padding:.65rem 1.3rem;font:600 1rem "Source Sans 3",sans-serif;cursor:pointer;text-decoration:none}
+.boton.chico{padding:.35rem .9rem}
+.boton:hover{filter:brightness(1.12)}
+:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.hero{padding:clamp(3rem,9vw,6rem) clamp(1rem,4vw,3rem);background:var(--negro);color:#fff}
+.hero p{max-width:54ch;font-size:1.15rem;margin:0 0 1.5rem}
+.bloque{padding:2rem clamp(1rem,3vw,2.5rem);max-width:1100px;margin:0 auto}
+.bloque.angosto{max-width:520px}
+.bloque.dos{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.servicios{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.servicios article{background:var(--papel);border-left:4px solid var(--rojo-banco);padding:1rem;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+form{display:grid;gap:.9rem}
+label{display:grid;gap:.25rem;font-weight:600;font-size:.95rem}
+input,select{font:inherit;padding:.55rem .7rem;border:1px solid var(--linea);border-radius:3px;background:var(--papel)}
+.error{color:var(--rojo);margin:0;min-height:1.4em;font-weight:600}
+.ok{color:var(--ok);font-weight:600}
+.nota{font-size:.9rem;color:#5b5f66}
+.resumen,.tarjeta{background:var(--papel);padding:1.3rem;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.resumen dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin:0 0 1rem}
+.resumen dt{font-weight:600}.resumen dd{margin:0}
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 56px)}
+.layout .bloque{width:100%;max-width:none;margin:0}
+.pestanas{display:flex;flex-direction:column;background:var(--negro);padding:.5rem 0}
+.pestanas button{background:none;border:0;border-left:4px solid transparent;padding:.95rem 1.1rem;text-align:left;font:600 .95rem "Source Sans 3",sans-serif;color:#fff;cursor:pointer}
+.pestanas button:hover{background:#262626}
+.pestanas button.activa{border-color:var(--rojo-banco);background:#262626}
+.cuentas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.tarjeta{border-top:4px solid var(--azul)}
+.saldo{font:600 2rem "Source Sans 3",sans-serif;color:var(--azul);margin:.3rem 0}
+.tabla-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--papel)}
+th,td{padding:.6rem .7rem;border-bottom:1px solid var(--linea);text-align:left}
+th{background:#ebebed}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.neg{color:var(--rojo)}.pos{color:var(--ok)}
+.fila{display:flex;flex-wrap:wrap;gap:1rem;align-items:end;margin-bottom:1.2rem}
+.formulario{max-width:460px;background:var(--papel);padding:1.3rem;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.estado{background:var(--papel);padding:1.5rem;margin-top:1rem;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.estado header{border-bottom:3px solid var(--rojo-banco);margin-bottom:1rem}
+.totales{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1rem 0}
+.pie{text-align:center;padding:2rem 1rem;font-size:.85rem;color:#5b5f66}
+@media(max-width:760px){.bloque.dos{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.pestanas{flex-direction:row;overflow-x:auto}.pestanas button{white-space:nowrap;border-left:0;border-bottom:4px solid transparent}.pestanas button.activa{border-bottom-color:var(--rojo-banco)}}
+@media print{.barra,.pestanas,.pie,.fila,.no-print{display:none!important}body{background:#fff}.layout{display:block}.estado{box-shadow:none;padding:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
